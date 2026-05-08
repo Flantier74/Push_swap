@@ -8,7 +8,6 @@ SRCS =	lst_utils.c \
 		main.c \
 		optimizations.c \
 		quicksort.c \
-		stack.c \
 		test_stack_A.c \
 		test_stack_B.c \
 		test_utils.c \
