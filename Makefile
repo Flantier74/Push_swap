@@ -4,12 +4,20 @@ DBG = -g
 
 INCLUDES = .
 SRC_PATH = .
-SRCS =	quicksort.c \
-		stack.c \
+SRCS =	lst_utils.c \
 		main.c \
-		test_quicksort.c \
-		test_stack.c \
-		test_utils.c
+		optimizations.c \
+		quicksort.c \
+		stack.c \
+		test_stack_A.c \
+		test_stack_B.c \
+		test_utils.c \
+		utils_operations.c \
+		utils_operations_stack_a.c \
+		utils_operations_stack_a_b.c \
+		utils_operations_stack_b.c
+		# test_quicksort.c \
+		# test_stack.c \
 
 OBJS = $(SRCS:%.c=%.o)
 

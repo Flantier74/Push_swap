@@ -3,35 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eruffin <eruffin@learner.42.tech>          +#+  +:+       +#+        */
+/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 13:03:15 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/07 13:03:16 by eruffin          ###   ########.fr       */
+/*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
+/*   Updated: 2026/05/08 17:24:57 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
 
-void	s(int *arr, int arr_size);
-void	sa(int *a, int arr_size);
-void	sb(int *b, int arr_size);
-void	ss(int *a, int *b, int arr_size);
-void    p(int *a, int *b, int arr_size);
-void	pa(int *a, int *b, int arr_size);
-void	pb(int *b, int *a, int arr_size);
-void	r(int *arr, int arr_size);
-void	ra(int *a, int arr_size);
-void	rb(int *b, int arr_size);
-void	rr(int *a, int *b, int arr_size);
-void    revr(int *arr, int arr_size);
-void	rra(int *a, int arr_size);
-void	rrb(int *b, int arr_size);
-void	rrr(int *a, int *b, int arr_size);
+typedef struct s_stack
+{
+	int				content;
+	struct s_stack	*next;
+}	t_stack;
+
+typedef struct s_data
+{
+	t_stack		*a;
+	t_stack		*b;
+	int			a_size;
+	int			b_size;
+}	t_data;
+
+t_data		*ft_datanew(t_stack *a, t_stack *b);
+t_stack		*ft_lstnew(int content);
+void		ft_lstdelone(t_stack *stack);
+int			ft_lstsize(t_stack *stack);
+t_stack		*ft_lstlast(t_stack *stack);
+t_stack		*ft_lstpenultimate(t_stack *stack);
+void		sa(t_data *data);
+void		sb(t_data *data);
+void		ss(t_data *data);
+void		pa(t_data *data);
+void		pb(t_data *data);
+void		ra(t_data *data);
+void		rb(t_data *data);
+void		rr(t_data *data);
+void		rra(t_data *data);
+void		rrb(t_data *data);
+void		rrr(t_data *data);
 
 void	quicksort(void *list, size_t nmemb, size_t size, int (*compar)(const void *, const void *));
 void	swap(int *a, int *b);
+
+void	ft_best_rot(t_stack **stack, t_stack *node);
 
 #endif

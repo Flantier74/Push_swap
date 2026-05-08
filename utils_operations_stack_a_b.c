@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils_operations_stack_a_b.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eruffin <eruffin@learner.42.tech>          +#+  +:+       +#+        */
+/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 16:28:46 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/07 16:28:54 by eruffin          ###   ########.fr       */
+/*   Created: 2026/05/08 17:21:21 by cribstei          #+#    #+#             */
+/*   Updated: 2026/05/08 17:39:43 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test_utils.h"
+#include "push_swap.h"
 
-int main(void)
+void	ss(t_data *data)
 {
-  // test_stack();
-  // test_quicksort();
-  test_stack_A();
-  // test_stack_B();
+	sa(data);
+	sb(data);
+}
+
+void	rr(t_data *data)
+{
+	ra(data);
+	rb(data);
+}
+
+void	rrr(t_data *data)
+{
+	rra(data);
+	rrb(data);
 }

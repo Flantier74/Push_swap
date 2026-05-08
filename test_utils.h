@@ -23,4 +23,7 @@ int  descending(const void *a, const void *b);
 int  test_quicksort(void);
 int  test_stack(void);
 
+int test_stack_A(void);
+int test_stack_B(void);
+
 #endif

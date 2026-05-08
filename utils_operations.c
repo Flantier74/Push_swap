@@ -1,21 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils_operations.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eruffin <eruffin@learner.42.tech>          +#+  +:+       +#+        */
+/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 16:28:46 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/07 16:28:54 by eruffin          ###   ########.fr       */
+/*   Created: 2026/05/08 16:24:27 by cribstei          #+#    #+#             */
+/*   Updated: 2026/05/08 16:25:09 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test_utils.h"
-
-int main(void)
-{
-  // test_stack();
-  // test_quicksort();
-  test_stack_A();
-  // test_stack_B();
-}
+#include "push_swap.h"
