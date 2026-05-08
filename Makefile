@@ -16,8 +16,7 @@ SRCS =	lst_utils.c \
 		utils_operations_stack_a.c \
 		utils_operations_stack_a_b.c \
 		utils_operations_stack_b.c
-		# test_quicksort.c \
-		# test_stack.c \
+		# test_quicksort.c
 
 OBJS = $(SRCS:%.c=%.o)
 
