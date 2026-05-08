@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test_utils.h"
+#include "../test_utils.h"
 
 void quicksort(void *list, size_t nmemb, size_t size,
                int (*compar)(const void *, const void *));

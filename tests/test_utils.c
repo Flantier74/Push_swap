@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test_utils.h"
+#include "../test_utils.h"
 
 // print array A, if N == 2, also prints B. Arrays must be of size SIZE
 void printer(int *a, int *b, int n, int size)

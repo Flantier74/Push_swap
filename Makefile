@@ -8,25 +8,26 @@ SRCS =	lst_utils.c \
 		main.c \
 		optimizations.c \
 		quicksort.c \
-		test_stack_A.c \
-		test_stack_B.c \
-		test_utils.c \
 		utils_operations.c \
 		utils_operations_stack_a.c \
 		utils_operations_stack_a_b.c \
 		utils_operations_stack_b.c
-		# test_quicksort.c
+OBJS = 	$(SRCS:%.c=%.o) \
+		tests/test_quicksort.o \
+		tests/test_stack_A.o \
+		tests/test_stack_B.o \
+		tests/test_utils.o
 
-OBJS = $(SRCS:%.c=%.o)
+TESTS =	tests/test_quicksort.c \
+		tests/test_stack_A.c \
+		tests/test_stack_B.c \
+		tests/test_utils.c
+TESTS_OBJS = $(TESTS:%.c=%.o)
 
 NAME = a.out
 
 .PHONY: all
 all: $(NAME)
-
-.PHONY: debug
-debug: CFLAGS += -DDEBUG -g
-debug: re
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
@@ -34,9 +35,17 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c -I$(INCLUDES) $< -o $@
 
+.PHONY: debug
+debug: CFLAGS += -DDEBUG -g
+debug: re
+
+.PHONY: test
+test: $(OBJS) $(TESTS_OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(TEST_OBJS) -o $@ && ./test
+
 .PHONY: clean
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(TESTS_OBJS)
 
 .PHONY: fclean
 fclean: clean
