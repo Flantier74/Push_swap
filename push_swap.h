@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/08 17:24:57 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/09 13:09:00 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_stack
 {
 	int				content;
+	int				rank;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -37,6 +38,7 @@ void		ft_lstdelone(t_stack *stack);
 int			ft_lstsize(t_stack *stack);
 t_stack		*ft_lstlast(t_stack *stack);
 t_stack		*ft_lstpenultimate(t_stack *stack);
+void init_rank(t_stack *stack);
 void		sa(t_data *data);
 void		sb(t_data *data);
 void		ss(t_data *data);
@@ -48,10 +50,9 @@ void		rr(t_data *data);
 void		rra(t_data *data);
 void		rrb(t_data *data);
 void		rrr(t_data *data);
-
-void quicksort(t_stack *stack, size_t nmemb, size_t size, int (*compar)(const int, const int));
-void	swap(int *a, int *b);
-
-void	ft_best_rot(t_stack **stack, t_stack *node);
+void		quicksort(t_stack *stack, size_t nmemb, size_t size, int (*compar)(const int *, const int *));
+void		insertion_sort_adaptation(t_data *data);
+void		swap(int *a, int *b);
+void		ft_best_rot(t_stack **stack, t_stack *node);
 
 #endif

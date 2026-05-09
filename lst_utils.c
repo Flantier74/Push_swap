@@ -75,3 +75,32 @@ void	ft_lstdelone(t_stack *stack)
 		return ;
 	free(stack);
 }
+
+// gives each node of the stack a rank based on its value compared to other
+// nodes value.
+void init_rank(t_stack *stack)
+{
+	t_stack *node_min;
+	int      next_rank;
+	t_stack *current;
+
+	node_min = stack;
+	next_rank = 1;
+
+	while (next_rank < ft_lstsize(stack) + 1)
+	  {
+		current = stack;
+		while (current->rank)
+		  current = current->next;
+		node_min = current;
+		current = stack;
+		while (current)
+		{
+		  if (current->content < node_min->content && !current->rank)
+				node_min = current;
+			current = current->next;
+		}
+		node_min->rank = next_rank;
+		next_rank++;
+	}
+}
