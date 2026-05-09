@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../test_utils.h"
+#include "test_utils.h"
 
 #include "../push_swap.h"
 
@@ -21,6 +21,7 @@ t_stack *init_stack(int a, int b, int c, int d, int e, int f)
 
 	stack = ft_lstnew(a);
 	new = ft_lstnew(b);
+	stack->next = new;
 	new->next = ft_lstnew(c);
 	new = new->next;
 	new->next = ft_lstnew(d);
@@ -32,27 +33,26 @@ t_stack *init_stack(int a, int b, int c, int d, int e, int f)
 	return (stack);
 }
 
-// print array A, if N == 2, also prints B. Arrays must be of size SIZE
-void printer(int *a, int *b, int n, int size)
+// print stacks in data
+void printer(t_data *data)
 {
-	for (int i = 0; i < size; i++)
-		printf("%d,", a[i]);
-	printf("\n");
-
-	if (n == 2)
+	t_stack *a = data->a;
+	t_stack *b = data->b;
+	printf("AAA	BBB\n-----------\n");
+	while (a || b)
 	{
-		for (int i = 0; i < size; i++)
-			printf("%d,", b[i]);
-		printf("\n");
+		printf("%3d	%3d\n", a->content, b->content);
+		a = a->next;
+		b = b->next;
 	}
 }
 
-int ascending(const void *a, const void *b)
+int ascending(const int *a, const int *b)
 {
-	return (*(int *)a <= *(int *)b);
+	return (*a <= *b);
 }
 
-int descending(const void *a, const void *b)
+int descending(const int *a, const int *b)
 {
-	return (*(int *)b <= *(int *)a);
+	return (*b <= *a);
 }

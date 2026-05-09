@@ -18,9 +18,9 @@
 
 #include "../push_swap.h"
 
-void     printer(int *a, int *b, int n, int size);
-int      ascending(const void *a, const void *b);
-int      descending(const void *a, const void *b);
+void     printer(t_data *data);
+int      ascending(const int *a, const int *b);
+int      descending(const int *a, const int *b);
 
 t_stack *init_stack(int a, int b, int c, int d, int e, int f);
 
