@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_utils.h                                       :+:      :+:    :+:   */
+/*   utils_test.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eruffin <eruffin@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_UTILS_H
-#define TEST_UTILS_H
+#ifndef UTILS_TEST_H
+#define UTILS_TEST_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,5 +28,7 @@ int      test_quicksort(void);
 
 int      test_stack_A(void);
 int      test_stack_B(void);
+
+int test_init_rank(void);
 
 #endif
