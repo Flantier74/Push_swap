@@ -49,7 +49,7 @@ void		rra(t_data *data);
 void		rrb(t_data *data);
 void		rrr(t_data *data);
 
-void	quicksort(void *list, size_t nmemb, size_t size, int (*compar)(const void *, const void *));
+void quicksort(t_stack *stack, size_t nmemb, size_t size, int (*compar)(const int, const int));
 void	swap(int *a, int *b);
 
 void	ft_best_rot(t_stack **stack, t_stack *node);

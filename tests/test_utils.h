@@ -13,16 +13,20 @@
 #ifndef TEST_UTILS_H
 #define TEST_UTILS_H
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-void printer(int *a, int *b, int n, int size);
-int  ascending(const void *a, const void *b);
-int  descending(const void *a, const void *b);
+#include "../push_swap.h"
 
-int  test_quicksort(void);
+void     printer(int *a, int *b, int n, int size);
+int      ascending(const void *a, const void *b);
+int      descending(const void *a, const void *b);
 
-int test_stack_A(void);
-int test_stack_B(void);
+t_stack *init_stack(int a, int b, int c, int d, int e, int f);
+
+int      test_quicksort(void);
+
+int      test_stack_A(void);
+int      test_stack_B(void);
 
 #endif

@@ -12,6 +12,26 @@
 
 #include "../test_utils.h"
 
+#include "../push_swap.h"
+
+t_stack *init_stack(int a, int b, int c, int d, int e, int f)
+{
+	t_stack *new;
+	t_stack *stack = malloc(sizeof(t_stack));
+
+	stack = ft_lstnew(a);
+	new = ft_lstnew(b);
+	new->next = ft_lstnew(c);
+	new = new->next;
+	new->next = ft_lstnew(d);
+	new = new->next;
+	new->next = ft_lstnew(e);
+	new = new->next;
+	new->next = ft_lstnew(f);
+
+	return (stack);
+}
+
 // print array A, if N == 2, also prints B. Arrays must be of size SIZE
 void printer(int *a, int *b, int n, int size)
 {

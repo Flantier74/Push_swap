@@ -15,7 +15,7 @@
 int main(void)
 {
   // test_stack();
-  // test_quicksort();
-  test_stack_A();
-  test_stack_B();
+  test_quicksort();
+  // test_stack_A();
+  // test_stack_B();
 }
