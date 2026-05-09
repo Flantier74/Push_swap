@@ -29,7 +29,7 @@ void pswap()
 // NMEMB = the number of element in stack
 // SIZE = the size in bytes of a single element
 void quicksort(t_stack *stack, size_t nmemb, size_t size,
-               int (*compar)(const int, const int))
+               int (*compar)(const int *, const int *))
 {
 	t_stack *i;
 	t_stack *j;
@@ -41,7 +41,7 @@ void quicksort(t_stack *stack, size_t nmemb, size_t size,
 
 	while (j < p)
 	{
-		if (compar(j->content, p->content))
+		if (compar(&j->content, &p->content))
 			j += size;
 		else
 		{
