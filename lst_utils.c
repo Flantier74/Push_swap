@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 10:37:34 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/08 17:04:27 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/09 13:09:13 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ t_stack	*ft_lstnew(int content)
 	if (!stack)
 		return (NULL);
 	stack->content = content;
+	stack->rank = 0;
 	stack->next = NULL;
 	return (stack);
 }

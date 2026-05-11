@@ -18,5 +18,6 @@ int main(void)
 	// test_quicksort();
 	// test_stack_A();
 	// test_stack_B();
-	test_init_rank();
+	test_insertion_sort_adaptation();
+	// test_init_rank();
 }

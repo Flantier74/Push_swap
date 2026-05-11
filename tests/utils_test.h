@@ -24,11 +24,10 @@ int      descending(const int *a, const int *b);
 
 t_stack *init_stack(int a, int b, int c, int d, int e, int f);
 
+int      test_insertion_sort_adaptation(void);
 int      test_quicksort(void);
-
 int      test_stack_A(void);
 int      test_stack_B(void);
-
-int test_init_rank(void);
+int      test_init_rank(void);
 
 #endif

@@ -38,7 +38,7 @@ void		ft_lstdelone(t_stack *stack);
 int			ft_lstsize(t_stack *stack);
 t_stack		*ft_lstlast(t_stack *stack);
 t_stack		*ft_lstpenultimate(t_stack *stack);
-void init_rank(t_stack *stack);
+void		init_rank(t_stack *stack);
 void		sa(t_data *data);
 void		sb(t_data *data);
 void		ss(t_data *data);
