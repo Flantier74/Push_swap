@@ -24,6 +24,7 @@ int      descending(const int *a, const int *b);
 
 t_stack *init_stack(int a, int b, int c, int d, int e, int f);
 
+int      test_calc_disorder(void);
 int      test_insertion_sort_adaptation(void);
 int      test_quicksort(void);
 int      test_stack_A(void);

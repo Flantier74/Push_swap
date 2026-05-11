@@ -4,7 +4,8 @@ DBG = -g
 
 INCLUDES = tests
 SRC_PATH = .
-SRCS =	insertion_sort_adaptation.c \
+SRCS =	calc_disorder.c \
+		insertion_sort_adaptation.c \
 		lst_utils.c \
 		optimizations.c \
 		quicksort.c \
@@ -15,7 +16,8 @@ SRCS =	insertion_sort_adaptation.c \
 
 OBJS = 	$(SRCS:%.c=%.o)
 
-TESTS =	tests/test_init_rank.c \
+TESTS =	tests/test_disorder.c \
+		tests/test_init_rank.c \
 		tests/test_insertion_sort_adaptation.c \
 		tests/test_quicksort.c \
 		tests/test_stack_A.c \

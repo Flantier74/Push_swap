@@ -32,6 +32,7 @@ typedef struct s_data
 	int			b_size;
 }	t_data;
 
+double		calc_disorder(t_stack *stack);
 t_data		*ft_datanew(t_stack *a, t_stack *b);
 t_stack		*ft_lstnew(int content);
 void		ft_lstdelone(t_stack *stack);
