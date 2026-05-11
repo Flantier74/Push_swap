@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 17:21:13 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/10 14:28:20 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/11 11:28:02 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	pa(t_data *data)
 	data->b = data->b->next;
 	tmp->next = data->a;
 	data->a = tmp;
+	data->a_size++;
+	data->b_size--;
 }
 
 void	ra(t_data *data)
