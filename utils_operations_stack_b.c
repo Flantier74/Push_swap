@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 16:24:27 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/11 11:28:14 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/11 12:20:36 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ void	pb(t_data *data)
 	if (!data->a)
 		return ;
 	tmp = data->a;
-	data->a = data->a->next;
+	if (data->a->next)
+		data->a = data->a->next;
+	else
+		data->a = NULL;
 	tmp->next = data->b;
 	data->b = tmp;
 	data->a_size--;

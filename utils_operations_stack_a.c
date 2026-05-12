@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 17:21:13 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/11 11:28:02 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/11 12:52:00 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ void	pa(t_data *data)
 	if (!data->b)
 		return ;
 	tmp = data->b;
-	data->b = data->b->next;
+	if (data->b->next)
+		data->b = data->b->next;
+	else
+		data->b = NULL;
 	tmp->next = data->a;
 	data->a = tmp;
 	data->a_size++;

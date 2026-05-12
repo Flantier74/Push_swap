@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 11:49:48 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/10 14:29:24 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/11 12:56:28 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,55 +18,70 @@ int	test_insertion_sort_adaptation(void)
 	t_stack	*first_a;
 	t_stack	*second_a;
 	t_stack	*third_a;
-	t_stack	*first_b;
 	t_stack	*fourth_a;
 	t_stack	*fifth_a;
-	t_stack	*tmp_a;
-	t_stack	*tmp_b;
+	t_stack	*tmp;
 
 	first_a = ft_lstnew(54);
 	second_a = ft_lstnew(128);
 	third_a = ft_lstnew(-128);
 	fourth_a = ft_lstnew(500);
 	fifth_a = ft_lstnew(396);
+
 	first_a->next = second_a;
 	second_a->next = third_a;
 	third_a->next = fourth_a;
 	fourth_a->next = fifth_a;
-	first_b = NULL;
-	data = ft_datanew(first_a, first_b);
 
-	printf("Stack A:\n");
-	tmp_a = data->a;
-	while (tmp_a)
+	data = ft_datanew(first_a, NULL);
+
+	printf("Stack A BEFORE:\n");
+	tmp = data->a;
+	while (tmp)
 	{
-		printf("%d\n", tmp_a->content);
-		tmp_a = tmp_a->next;
+		printf("%d\n", tmp->content);
+		tmp = tmp->next;
 	}
 
-	printf("\nStack B:\n");
-	tmp_b = data->b;
-	while (tmp_b)
+	printf("\nStack B BEFORE:\n");
+	tmp = data->b;
+	while (tmp)
 	{
-		printf("%d\n", tmp_b->content);
-		tmp_b = tmp_b->next;
+		printf("%d\n", tmp->content);
+		tmp = tmp->next;
 	}
 
 	insertion_sort_adaptation(data);
 
-	printf("\nMAJ stack A:\n");
-	tmp_a = data->a;
-	while (tmp_a)
+	printf("\nSTACK A AFTER:\n");
+	tmp = data->a;
+	while (tmp)
 	{
-		printf("%d\n", tmp_a->content);
-		tmp_a = tmp_a->next;
+		printf("%d\n", tmp->content);
+		tmp = tmp->next;
 	}
-	printf("\nMAJ stack B:\n");
-	tmp_b = data->b;
-	while (tmp_b)
+
+	printf("\nSTACK B AFTER:\n");
+	tmp = data->b;
+	while (tmp)
 	{
-		printf("%d\n", tmp_b->content);
-		tmp_b = tmp_b->next;
+		printf("%d\n", tmp->content);
+		tmp = tmp->next;
 	}
+
+	/* IMPORTANT: ajout d’un check minimal */
+	tmp = data->a;
+	while (tmp && tmp->next)
+	{
+		if (tmp->content < tmp->next->content)
+		{
+			printf("❌ NOT SORTED DESC\n");
+			return (0);
+		}
+		tmp = tmp->next;
+	}
+
+	printf("✔ OK\n");
+
 	return (0);
 }

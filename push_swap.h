@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/09 13:09:00 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/11 15:00:54 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,13 @@ void		rr(t_data *data);
 void		rra(t_data *data);
 void		rrb(t_data *data);
 void		rrr(t_data *data);
+void		push_all_b_a(t_data	*data);
+int			ft_square(double value);
+int			ft_max(t_stack *stack);
+int			ft_min(t_stack *stack);
 void		quicksort(t_stack *stack, size_t nmemb, size_t size, int (*compar)(const int *, const int *));
 void		insertion_sort_adaptation(t_data *data);
+void		chunk_based_sorting(t_data *data);
 void		swap(int *a, int *b);
 void		ft_best_rot(t_stack **stack, t_stack *node);
 

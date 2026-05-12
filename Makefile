@@ -6,6 +6,7 @@ INCLUDES = tests
 SRC_PATH = .
 SRCS =	calc_disorder.c \
 		insertion_sort_adaptation.c \
+		chunk_based_sorting.c \
 		lst_utils.c \
 		optimizations.c \
 		quicksort.c \
@@ -19,6 +20,8 @@ OBJS = 	$(SRCS:%.c=%.o)
 TESTS =	tests/test_disorder.c \
 		tests/test_init_rank.c \
 		tests/test_insertion_sort_adaptation.c \
+		tests/test_insertion_sort_adaptation_AI.c \
+		tests/test_chunk_based_sorting.c \
 		tests/test_quicksort.c \
 		tests/test_stack_A.c \
 		tests/test_stack_B.c \

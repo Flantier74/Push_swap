@@ -6,8 +6,54 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 16:24:27 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/08 16:25:09 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/11 15:06:42 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	push_all_b_a(t_data	*data)
+{
+	while (data->b)
+		pa(data);
+}
+
+int	ft_square(double value)
+{
+	double	square;
+
+	square = value / 2;
+	while (square * square / value < 0.98 || 1.02 < square * square / value)
+		square = 0.5 * (square + value / square);
+	return ((int)square);
+}
+
+int	ft_min(t_stack *stack)
+{
+	int	min;
+
+	if (stack)
+		min = stack->content;
+	while (stack)
+	{
+		if (stack->content < min)
+			min = stack->content;
+		stack = stack->next;
+	}
+	return (min);
+}
+
+int	ft_max(t_stack *stack)
+{
+	int	max;
+
+	if (stack)
+		max = stack->content;
+	while (stack)
+	{
+		if (stack->content > max)
+			max = stack->content;
+		stack = stack->next;
+	}
+	return (max);
+}
