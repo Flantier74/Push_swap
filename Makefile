@@ -14,6 +14,7 @@ SRCS =	calc_disorder.c \
 		utils_operations_stack_a.c \
 		utils_operations_stack_a_b.c \
 		radix_sort.c \
+		utils.c \
 		utils_operations_stack_b.c
 
 OBJS = 	$(SRCS:%.c=%.o)

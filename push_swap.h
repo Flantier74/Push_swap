@@ -62,5 +62,9 @@ void		chunk_based_sorting(t_data *data);
 void		swap(int *a, int *b);
 void		ft_best_rot(t_stack **stack, t_stack *node);
 void		radix_sort(t_data *data);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_power(int nb, int pow);
+int			ft_atoi(const char *nptr);
+int         ft_isdigit(int c);
 
 #endif
