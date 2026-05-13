@@ -41,6 +41,7 @@ static int highest_rank(t_data *data)
 	return (max);
 }
 
+
 int radix_sort(t_data *data)
 {
 	int ops;

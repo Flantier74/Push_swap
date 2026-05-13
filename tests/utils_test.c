@@ -38,17 +38,18 @@ void printer(t_data *data)
 {
 	t_stack *a = data->a;
 	t_stack *b = data->b;
-	printf("AAA	BBB\n-----------\n");
+
+	printf("   AAA      BBB\n------------------\n");
 	while (a || b)
 	{
 		if (a)
 		{
-			printf("%3d	", a->content);
+			printf("(%d) %3d         ", a->rank, a->content);
 			a = a->next;
 		}
 		if (b)
 		{
-			printf("%3d", b->content);
+			printf("(%d) %3d", b->rank, b->content);
 			b = b->next;
 		}
 		printf("\n");

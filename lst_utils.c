@@ -86,9 +86,9 @@ void init_rank(t_stack *stack)
 	t_stack *current;
 
 	node_min = stack;
-	next_rank = 1;
+	next_rank = ft_lstsize(stack);
 
-	while (next_rank < ft_lstsize(stack) + 1)
+	while (next_rank > 0)
 	  {
 		current = stack;
 		while (current->rank)
@@ -102,6 +102,6 @@ void init_rank(t_stack *stack)
 			current = current->next;
 		}
 		node_min->rank = next_rank;
-		next_rank++;
+		next_rank--;
 	}
 }
