@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 10:37:34 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/09 13:09:13 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/13 12:56:39 by eruffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,25 +79,24 @@ void	ft_lstdelone(t_stack *stack)
 
 // gives each node of the stack a rank based on its value compared to other
 // nodes value.
-void init_rank(t_stack *stack)
+void	init_rank(t_stack *stack)
 {
-	t_stack *node_min;
-	int      next_rank;
-	t_stack *current;
+	t_stack	*node_min;
+	int		next_rank;
+	t_stack	*current;
 
 	node_min = stack;
 	next_rank = ft_lstsize(stack);
-
 	while (next_rank > 0)
-	  {
+	{
 		current = stack;
 		while (current->rank)
-		  current = current->next;
+			current = current->next;
 		node_min = current;
 		current = stack;
 		while (current)
 		{
-		  if (current->content < node_min->content && !current->rank)
+			if (current->content < node_min->content && !current->rank)
 				node_min = current;
 			current = current->next;
 		}

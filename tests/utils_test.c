@@ -6,15 +6,14 @@
 /*   By: eruffin <eruffin@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 16:29:23 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/08 16:29:25 by eruffin          ###   ########.fr       */
+/*   Updated: 2026/05/13 12:46:34 by eruffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils_test.h"
-
 #include "../push_swap.h"
 
-t_stack *init_stack(int a, int b, int c, int d, int e, int f)
+t_stack	*init_stack(int a, int b, int c, int d, int e, int f)
 {
 	t_stack *new;
 	t_stack *stack = malloc(sizeof(t_stack));
@@ -34,7 +33,7 @@ t_stack *init_stack(int a, int b, int c, int d, int e, int f)
 }
 
 // print stacks in data
-void printer(t_data *data)
+void	printer(t_data *data)
 {
 	t_stack *a = data->a;
 	t_stack *b = data->b;
@@ -56,12 +55,12 @@ void printer(t_data *data)
 	}
 }
 
-int ascending(const int *a, const int *b)
+int	ascending(const int *a, const int *b)
 {
 	return (*a <= *b);
 }
 
-int descending(const int *a, const int *b)
+int	descending(const int *a, const int *b)
 {
 	return (*b <= *a);
 }

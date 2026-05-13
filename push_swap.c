@@ -12,7 +12,34 @@
 
 #include "push_swap.h"
 
-int main(void)
+
+static int select_strategy(char **argv)
 {
-  printf("oooooooooooooo\n");
+	if (!ft_strcmp("--simple", argv[1]))
+		return (1);
+	else if (!ft_strcmp("--medium", argv[1]))
+		return (2);
+	else if (!ft_strcmp("--complex", argv[1]))
+		return (3);
+	else if (!ft_strcmp("--adaptative", argv[1]))
+		return (0);
+	return (-1);
+}
+
+int main(int argc, char *argv[])
+{
+	int i;
+	int strat;
+
+	i = 1;
+	strat = select_strategy(argv);
+	if (strat >= 0)
+		i++;
+	while (i < argc)
+	{
+
+		printf("%s\n", argv[i]);
+		i++;
+	}
+	return (0);
 }
