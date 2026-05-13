@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 16:29:32 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/11 13:36:31 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/13 12:39:15 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <time.h>
 
 # include "../push_swap.h"
 
@@ -32,5 +33,6 @@ int		test_quicksort(void);
 int		test_stack_A(void);
 int		test_stack_B(void);
 int		test_init_rank(void);
+int		test_500_1000(void);
 
 #endif

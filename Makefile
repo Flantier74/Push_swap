@@ -22,6 +22,7 @@ TESTS =	tests/test_disorder.c \
 		tests/test_insertion_sort_adaptation.c \
 		tests/test_insertion_sort_adaptation_AI.c \
 		tests/test_chunk_based_sorting.c \
+		tests/test_500_1000.c \
 		tests/test_quicksort.c \
 		tests/test_stack_A.c \
 		tests/test_stack_B.c \
