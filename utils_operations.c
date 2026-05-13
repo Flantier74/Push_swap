@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils_operations.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophe <christophe@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 16:24:27 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/13 14:28:23 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/13 23:03:12 by christophe       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	push_all_b_a(t_data	*data)
-{
-	while (data->b)
-		pa(data);
-}
 
 int	ft_square(double value)
 {

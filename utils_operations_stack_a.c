@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_operations_stack_a.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophe <christophe@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 17:21:13 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/13 14:30:29 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/13 23:09:09 by christophe       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sa(t_data *data)
 	tmp = data->a->content;
 	data->a->content = data->a->next->content;
 	data->a->next->content = tmp;
-	data->count += write(1, "sa", 2) - 1;
+	data->count += write(1, "sa ", 3) - 1;
 }
 
 void	pa(t_data *data)
@@ -39,7 +39,7 @@ void	pa(t_data *data)
 	data->a = tmp;
 	data->a_size++;
 	data->b_size--;
-	data->count += write(1, "pa", 2) - 1;
+	data->count += write(1, "pa ", 3) - 1;
 }
 
 void	ra(t_data *data)
@@ -54,7 +54,7 @@ void	ra(t_data *data)
 	data->a = data->a->next;
 	last->next = tmp;
 	tmp->next = NULL;
-	data->count += write(1, "ra", 2) - 1;
+	data->count += write(1, "ra ", 3) - 1;
 }
 
 void	rra(t_data *data)
@@ -69,5 +69,5 @@ void	rra(t_data *data)
 	penultimate->next = NULL;
 	last->next = data->a;
 	data->a = last;
-	data->count += write(1, "rra", 2) - 2;
+	data->count += write(1, "rra ", 4) - 2;
 }

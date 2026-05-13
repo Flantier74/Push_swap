@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_500_1000.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophe <christophe@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 12:21:16 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/13 14:35:03 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/13 23:47:48 by christophe       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static t_stack	*make_list(int nbr)
 	return (head);
 }
 
-static int	run_test(char *name, t_stack *a, int (*algo)(t_data *))
+static int	run_test(char *name, t_stack *a, void (*algo)(t_data *))
 {
 	t_data	*data;
 	int		size_before;
@@ -79,18 +79,18 @@ int	test_500_1000(void)
 	int			count;
 	/* t_stack	*list1000; */
 
-	list500 = make_list(500);
+	list500 = make_list(1000);
 	/* list1000 = make_list(1000); */
 
 	printf("\n====================\n");
 	printf("Algorithme simple:\n");
 	printf("====================\n");
 	count = run_test("500 valeurs", list500, insertion_sort_adaptation);
-	printf("Nombre d'operation maximum classe n*n : %d\n", 500 * 500);
-	if (count > 500 * 500)
-		printf("❌ Trop d'operations dude : %d !!\n", count);
+	printf("Nombre d'operation maximum classe n*n : %d\n", 1000 * 1000);
+	if (count > 1000 * 1000)
+		printf("❌ Trop d'operations dude: %d !!\n", count);
 	else
-		printf("✔️ OK: Bon nombre d'operations\n");
+		printf("✔️ OK: Bon nombre d'operations: %d !!\n", count);
 
 	/* printf("\n====================\n");
 	printf("Algorithme medium:\n");
