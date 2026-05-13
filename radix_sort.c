@@ -41,72 +41,47 @@ static int	highest_rank(t_data *data)
 	return (max);
 }
 
-int	check_rank_last_bit(t_data *data, int bitshift)
+static void check_rank_last_bit(t_data *data, int bitshift)
 {
-	int	ops;
-
-	ops = 0;
 	if (((data->a->rank >> bitshift) & 1) == 0)
-	{
 		pb(data);
-		ops++;
-		write(1, "pb\n", 3);
-	}
 	else
-	{
 		ra(data);
-		ops++;
-		write(1, "ra\n", 3);
-	}
-	return (ops);
+	return;
 }
 
-int	check_rank_before_last_bit(t_data *data, int bitshift)
+static void check_rank_before_last_bit(t_data *data, int bitshift)
 {
-	int	ops;
-
-	ops = 0;
 	if (((data->b->rank >> (1 + bitshift)) & 1) == 1)
-	{
 		pa(data);
-		ops++;
-		write(1, "pa\n", 3);
-	}
 	else
-	{
 		rb(data);
-		ops++;
-		write(1, "rb\n", 3);
-	}
-	return (ops);
+	return;
 }
 
-int	radix_sort(t_data *data)
+void radix_sort(t_data *data)
 {
-	int	ops;
-	int	lst_size;
-	int	bitshift;
-	int	max_rank;
+	int lst_size;
+	int bitshift;
+	int max_rank;
 
-	ops = 0;
 	bitshift = 0;
 	init_rank(data->a);
 	max_rank = highest_rank(data);
 	while (bitshift <= count_bits(max_rank))
 	{
-	  lst_size = ft_lstsize(data->a);
+		lst_size = ft_lstsize(data->a);
 		while (lst_size)
 		{
-			ops += check_rank_last_bit(data, bitshift);
+			check_rank_last_bit(data, bitshift);
 			lst_size--;
 		}
 		lst_size = ft_lstsize(data->b);
 		while (lst_size)
 		{
-			ops += check_rank_before_last_bit(data, bitshift);
+			check_rank_before_last_bit(data, bitshift);
 			lst_size--;
 		}
 		bitshift++;
 	}
-	return (ops);
 }
