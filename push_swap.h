@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/11 15:00:54 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/13 14:35:22 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_data
 	t_stack		*b;
 	int			a_size;
 	int			b_size;
+	int			count;
 }	t_data;
 
 double		calc_disorder(t_stack *stack);
@@ -51,7 +52,7 @@ void		rr(t_data *data);
 void		rra(t_data *data);
 void		rrb(t_data *data);
 void		rrr(t_data *data);
-void		push_all_b_a(t_data	*data);
+void		push_all_b_a(t_data	*data, int *count);
 int			ft_square(double value);
 int			ft_max(t_stack *stack);
 int			ft_min(t_stack *stack);

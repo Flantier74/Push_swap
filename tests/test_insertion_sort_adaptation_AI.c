@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 12:04:58 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/11 13:01:17 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/13 11:26:40 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 /* ===================== CHECKS ===================== */
 
-static int	is_sorted_desc(t_stack *a)
+static int	is_sorted(t_stack *a)
 {
 	while (a && a->next)
 	{
-		if (a->content < a->next->content)
+		if (a->content > a->next->content)
 			return (0);
 		a = a->next;
 	}
@@ -68,7 +68,7 @@ static int	run_test(char *name, t_stack *a, void (*algo)(t_data *))
 
 	algo(data);
 
-	if (!is_sorted_desc(data->a))
+	if (!is_sorted(data->a))
 	{
 		printf("❌ NOT SORTED\n");
 		return (0);

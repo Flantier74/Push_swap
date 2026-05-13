@@ -6,13 +6,13 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 16:28:46 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/11 13:35:40 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/13 12:43:14 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils_test.h"
 
-int	main(void)
+int main(void)
 {
 	// test_stack();
 	// test_quicksort();
@@ -21,7 +21,8 @@ int	main(void)
 	// test_insertion_sort_adaptation();
 	// test_insertion_sort_adaptation_AI();
 	// test_chunk_based_sorting();
+	test_500_1000();
 	// test_init_rank();
 	// test_calc_disorder();
-	test_radix_sort();
+	// test_radix_sort();
 }

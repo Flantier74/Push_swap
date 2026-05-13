@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_chunk_based_sorting.c                         :+:      :+:    :+:   */
+/*   test_500_1000.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/11 13:26:12 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/13 11:22:49 by cribstei         ###   ########.fr       */
+/*   Created: 2026/05/13 12:21:16 by cribstei          #+#    #+#             */
+/*   Updated: 2026/05/13 14:35:03 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,9 @@ static int	is_sorted(t_stack *a)
 	return (1);
 }
 
-static int	stack_size(t_stack *a)
-{
-	int	i;
-
-	i = 0;
-	while (a)
-	{
-		i++;
-		a = a->next;
-	}
-	return (i);
-}
-
 /* ===================== CREATE LIST ===================== */
 
-static t_stack	*make_list(int *tab, int n)
+static t_stack	*make_list(int nbr)
 {
 	t_stack		*head;
 	t_stack		*node;
@@ -48,9 +35,10 @@ static t_stack	*make_list(int *tab, int n)
 
 	i = 0;
 	head = NULL;
-	while (i < n)
+	srand(time(NULL));
+	while (i < nbr)
 	{
-		node = ft_lstnew(tab[i]);
+		node = ft_lstnew(rand());
 		node->next = head;
 		head = node;
 		i++;
@@ -58,55 +46,62 @@ static t_stack	*make_list(int *tab, int n)
 	return (head);
 }
 
-/* ===================== TEST RUNNER ===================== */
-
-static int	run_test(char *name, t_stack *a, void (*algo)(t_data *))
+static int	run_test(char *name, t_stack *a, int (*algo)(t_data *))
 {
 	t_data	*data;
 	int		size_before;
+	int		count;
 
 	data = ft_datanew(a, NULL);
-	size_before = stack_size(data->a);
+	size_before = ft_lstsize(data->a);
 	printf("\n=== %s ===\n", name);
 	algo(data);
+	count = data->count;
 	if (!is_sorted(data->a))
 	{
 		printf("❌ NOT SORTED\n");
 		return (0);
 	}
-	if (stack_size(data->a) != size_before)
+	if (ft_lstsize(data->a) != size_before)
 	{
 		printf("❌ LOST ELEMENTS\n");
 		return (0);
 	}
 	if (data->b)
 		printf("⚠️ Warning: stack B not empty\n");
-	printf("✔️ OK\n");
-	return (1);
+	printf("\n ✔️ OK: liste triee et aucun element perdu\n");
+	return (count);
 }
 
-/* ===================== MAIN ===================== */
-
-int	test_chunk_based_sorting(void)
+int	test_500_1000(void)
 {
-	int	ok;
+	t_stack		*list500;
+	int			count;
+	/* t_stack	*list1000; */
 
-	ok = 0;
-	/* TEST 1 */
-	int t1[] = {54, 128, -128, 500, 396, 10, 25, 46, -99, 120, 0, 2, -1, -2, -45, 25, 555};
-	ok += run_test("random case", make_list(t1, 17), chunk_based_sorting);
-	/* TEST 2 */
-	int t2[] = {3, 2, 1};
-	ok += run_test("reverse sorted", make_list(t2, 3), chunk_based_sorting);
-	/* TEST 3 */
-	int t3[] = {1, 2, 3, 4, 5};
-	ok += run_test("already sorted", make_list(t3, 5), chunk_based_sorting);
-	/* TEST 4 */
-	int t4[] = {42};
-	ok += run_test("single element", make_list(t4, 1), chunk_based_sorting);
-	/* RESULT */
+	list500 = make_list(500);
+	/* list1000 = make_list(1000); */
+
 	printf("\n====================\n");
-	printf("Tests passed: %d/4\n", ok);
+	printf("Algorithme simple:\n");
 	printf("====================\n");
+	count = run_test("500 valeurs", list500, insertion_sort_adaptation);
+	printf("Nombre d'operation maximum classe n*n : %d\n", 500 * 500);
+	if (count > 500 * 500)
+		printf("❌ Trop d'operations dude : %d !!\n", count);
+	else
+		printf("✔️ OK: Bon nombre d'operations\n");
+
+	/* printf("\n====================\n");
+	printf("Algorithme medium:\n");
+	printf("====================\n");
+	count = 0;
+	run_test("500 valeurs", list500, chunk_based_sorting);
+	printf("Nombre d'operation maximum classe n*sqrt(n): %d\n",
+		500 * ft_square(500));
+	if (count > 500 * ft_square(500))
+		printf("❌ Trop d'operations dude : %d !!\n", count);
+	else
+		printf("✔️ OK: Bon nombre d'operations\n"); */
 	return (0);
 }

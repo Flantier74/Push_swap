@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 11:49:48 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/11 12:56:28 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/13 11:26:07 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ int	test_insertion_sort_adaptation(void)
 	tmp = data->a;
 	while (tmp && tmp->next)
 	{
-		if (tmp->content < tmp->next->content)
+		if (tmp->content > tmp->next->content)
 		{
-			printf("❌ NOT SORTED DESC\n");
+			printf("❌ NOT SORTED\n");
 			return (0);
 		}
 		tmp = tmp->next;
