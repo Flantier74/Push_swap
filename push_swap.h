@@ -60,5 +60,6 @@ void		insertion_sort_adaptation(t_data *data);
 void		chunk_based_sorting(t_data *data);
 void		swap(int *a, int *b);
 void		ft_best_rot(t_stack **stack, t_stack *node);
+int			radix_sort(t_data *data);
 
 #endif

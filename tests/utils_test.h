@@ -32,5 +32,6 @@ int		test_quicksort(void);
 int		test_stack_A(void);
 int		test_stack_B(void);
 int		test_init_rank(void);
+int		test_radix_sort(void);
 
 #endif

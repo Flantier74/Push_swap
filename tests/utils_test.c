@@ -41,9 +41,17 @@ void printer(t_data *data)
 	printf("AAA	BBB\n-----------\n");
 	while (a || b)
 	{
-		printf("%3d	%3d\n", a->content, b->content);
-		a = a->next;
-		b = b->next;
+		if (a)
+		{
+			printf("%3d	", a->content);
+			a = a->next;
+		}
+		if (b)
+		{
+			printf("%3d", b->content);
+			b = b->next;
+		}
+		printf("\n");
 	}
 }
 

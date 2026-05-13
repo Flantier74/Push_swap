@@ -23,4 +23,5 @@ int	main(void)
 	test_chunk_based_sorting();
 	// test_init_rank();
 	// test_calc_disorder();
+	test_radix_sort();
 }

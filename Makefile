@@ -13,6 +13,7 @@ SRCS =	calc_disorder.c \
 		utils_operations.c \
 		utils_operations_stack_a.c \
 		utils_operations_stack_a_b.c \
+		radix_sort.c \
 		utils_operations_stack_b.c
 
 OBJS = 	$(SRCS:%.c=%.o)
@@ -25,6 +26,7 @@ TESTS =	tests/test_disorder.c \
 		tests/test_quicksort.c \
 		tests/test_stack_A.c \
 		tests/test_stack_B.c \
+		tests/test_radix_sort.c \
 		tests/utils_test.c
 
 TESTS_OBJS = $(TESTS:%.c=%.o)
