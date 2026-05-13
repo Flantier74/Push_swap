@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eruffin <eruffin@learner.42.tech>          +#+  +:+       +#+        */
+/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/09 16:23:09 by eruffin          ###   ########.fr       */
+/*   Updated: 2026/05/14 10:53:21 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ static t_data *build_data(int argc, char **argv, int strat)
 int main(int argc, char *argv[])
 {
 	int     strat;
-	t_data *data;
-	double  disorder;
+	t_data	*data;
+	double	disorder;
 
 	strat = select_strategy(argv);
 	data = build_data(argc, argv, strat);

@@ -6,20 +6,11 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 16:24:27 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/13 14:28:23 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/14 10:51:47 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	push_all_b_a(t_data	*data)
-{
-  while (data->b)
-	{
-	  pa(data);
-	  data->count += write(1, "pa\n", 3) - 2;
-	}
-}
 
 int	ft_square(double value)
 {

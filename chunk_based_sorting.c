@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunk_based_sorting.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophe <christophe@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 11:33:02 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/13 14:35:37 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/13 23:04:56 by christophe       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,4 @@ void	chunk_based_sorting(t_data *data)
 		bubble_sort(data);
 		min = min + chunk;
 	}
-	push_all_b_a(data);
 }
