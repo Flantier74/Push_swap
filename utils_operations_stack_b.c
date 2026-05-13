@@ -21,7 +21,7 @@ void	sb(t_data *data)
 	tmp = data->b->content;
 	data->b->content = data->b->next->content;
 	data->b->next->content = tmp;
-	data->count += write(1, "sb", 2) - 1;
+	data->count += write(1, "sb\n", 3) - 2;
 }
 
 void	pb(t_data *data)
@@ -39,7 +39,7 @@ void	pb(t_data *data)
 	data->b = tmp;
 	data->a_size--;
 	data->b_size++;
-	data->count += write(1, "pb", 2) - 1;
+	data->count += write(1, "pb\n", 3) - 2;
 }
 
 void	rb(t_data *data)
@@ -54,7 +54,7 @@ void	rb(t_data *data)
 	data->b = data->b->next;
 	last->next = tmp;
 	tmp->next = NULL;
-	data->count += write(1, "rb", 2) - 1;
+	data->count += write(1, "rb\n", 3) - 2;
 }
 
 void	rrb(t_data *data)
@@ -69,5 +69,5 @@ void	rrb(t_data *data)
 	penultimate->next = NULL;
 	last->next = data->b;
 	data->b = last;
-	data->count += write(1, "rrb", 2) - 2;
+	data->count += write(1, "rrb\n", 4) - 3;
 }
