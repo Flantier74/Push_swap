@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static void	bubble_sort(t_data *data, int *count)
+static void	bubble_sort(t_data *data)
 {
 	int			i;
 	int			sorted;
@@ -36,7 +36,7 @@ static void	bubble_sort(t_data *data, int *count)
 	}
 }
 
-static void	loop_chunk(t_data *data, int chunk, int min, int *count)
+static void	loop_chunk(t_data *data, int chunk, int min)
 {
 	int	i;
 

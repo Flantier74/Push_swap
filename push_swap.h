@@ -52,7 +52,7 @@ void		rr(t_data *data);
 void		rra(t_data *data);
 void		rrb(t_data *data);
 void		rrr(t_data *data);
-void		push_all_b_a(t_data	*data, int *count);
+void		push_all_b_a(t_data	*data);
 int			ft_square(double value);
 int			ft_max(t_stack *stack);
 int			ft_min(t_stack *stack);

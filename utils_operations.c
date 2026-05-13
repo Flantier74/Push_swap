@@ -14,8 +14,11 @@
 
 void	push_all_b_a(t_data	*data)
 {
-	while (data->b)
-		pa(data);
+  while (data->b)
+	{
+	  pa(data);
+	  data->count += write(1, "pa\n", 3) - 2;
+	}
 }
 
 int	ft_square(double value)
