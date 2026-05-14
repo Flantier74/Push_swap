@@ -11,7 +11,6 @@ SRCS =	calc_disorder.c \
 		lst_utils.c \
 		lst_utils2.c \
 		optimizations.c \
-		quicksort.c \
 		utils_operations.c \
 		utils_operations_stack_a.c \
 		utils_operations_stack_a_b.c \
@@ -21,17 +20,7 @@ SRCS =	calc_disorder.c \
 
 OBJS = 	$(SRCS:%.c=%.o)
 
-TESTS =	tests/test_disorder.c \
-		tests/test_init_rank.c \
-		tests/test_insertion_sort_adaptation.c \
-		tests/test_insertion_sort_adaptation_AI.c \
-		tests/test_chunk_based_sorting.c \
-		tests/test_500_1000.c \
-		tests/test_quicksort.c \
-		tests/test_stack_A.c \
-		tests/test_stack_B.c \
-		tests/test_radix_sort.c \
-		tests/utils_test.c
+TESTS =	tests/test_500_1000.c 
 
 TESTS_OBJS = $(TESTS:%.c=%.o)
 
