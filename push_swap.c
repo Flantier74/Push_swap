@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/14 13:35:31 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:41:39 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,11 @@ static int	select_strategy(char **argv)
 static void	sort(t_data *data, int strat)
 {
 	if (strat == 1)
-	{
-		printf("\nSIMPLE\n");
-		insertion_sort_adaptation(data);
-		return ;
-	}
+		return (write(1, "\nSIMPLE\n", 8), bubble_sort(data));
 	else if (strat == 2)
-	{
-		printf("\nMEDIUM\n");
-		chunk_based_sorting(data);
-		return ;
-	}
+		return (write(1, "\nMEDIUM\n", 8), chunk_based_sorting(data));
 	else if (strat == 3)
-	{
-		printf("\nCOMPLEX\n");
-		radix_sort(data);
-		return ;
-	}
+		return (write(1, "\nCOMPLEX\n", 9), radix_sort(data));
 	else
 		return ;
 }
