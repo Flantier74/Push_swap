@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_500_1000.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophe <christophe@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 12:21:16 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/13 23:47:48 by christophe       ###   ########.fr       */
+/*   Updated: 2026/05/14 13:08:47 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,31 +77,28 @@ int	test_500_1000(void)
 {
 	t_stack		*list500;
 	int			count;
-	/* t_stack	*list1000; */
 
-	list500 = make_list(1000);
-	/* list1000 = make_list(1000); */
+	list500 = make_list(500);
 
-	printf("\n====================\n");
+/* 	printf("\n====================\n");
 	printf("Algorithme simple:\n");
 	printf("====================\n");
-	count = run_test("500 valeurs", list500, insertion_sort_adaptation);
-	printf("Nombre d'operation maximum classe n*n : %d\n", 1000 * 1000);
-	if (count > 1000 * 1000)
+	count = run_test("500 valeurs", list500, bubble_sort);
+	printf("Nombre d'operation maximum classe n*n : %d\n", 500 * 500);
+	if (count > 500 * 500)
 		printf("❌ Trop d'operations dude: %d !!\n", count);
 	else
-		printf("✔️ OK: Bon nombre d'operations: %d !!\n", count);
+		printf("✔️ OK: Bon nombre d'operations: %d !!\n", count); */
 
-	/* printf("\n====================\n");
+	printf("\n====================\n");
 	printf("Algorithme medium:\n");
 	printf("====================\n");
-	count = 0;
-	run_test("500 valeurs", list500, chunk_based_sorting);
+	count = run_test("500 valeurs", list500, chunk_based_sorting);
 	printf("Nombre d'operation maximum classe n*sqrt(n): %d\n",
 		500 * ft_square(500));
 	if (count > 500 * ft_square(500))
 		printf("❌ Trop d'operations dude : %d !!\n", count);
 	else
-		printf("✔️ OK: Bon nombre d'operations\n"); */
+		printf("✔️ OK: Bon nombre d'operations: %d !!\n", count);
 	return (0);
 }

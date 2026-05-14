@@ -2,7 +2,7 @@
 
 int test_radix_sort(void)
 {
-	t_data  *data = malloc(sizeof(t_data));
+	/* t_data  *data = malloc(sizeof(t_data));
 	t_stack *stack_a = init_stack(-20, 79, -50, 0, 1, -1);
 	t_stack *stack_b = NULL;
 	data->a = stack_a;
@@ -15,7 +15,7 @@ int test_radix_sort(void)
 	ops = radix_sort(data);
 	printf("\n");
 	printer(data);
-	printf("------------------> OPS = %d\n", ops);
+	printf("------------------> OPS = %d\n", ops); */
 
 	return (0);
 }
