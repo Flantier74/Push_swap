@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eruffin <eruffin@learner.42.tech>          +#+  +:+       +#+        */
+/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 08:13:10 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/13 12:52:11 by eruffin          ###   ########.fr       */
+/*   Updated: 2026/05/14 11:09:47 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,29 +41,29 @@ static int	highest_rank(t_data *data)
 	return (max);
 }
 
-static void check_rank_last_bit(t_data *data, int bitshift)
+static void	check_rank_last_bit(t_data *data, int bitshift)
 {
 	if (((data->a->rank >> bitshift) & 1) == 0)
 		pb(data);
 	else
 		ra(data);
-	return;
+	return ;
 }
 
-static void check_rank_before_last_bit(t_data *data, int bitshift)
+static void	check_rank_before_last_bit(t_data *data, int bitshift)
 {
 	if (((data->b->rank >> (1 + bitshift)) & 1) == 1)
 		pa(data);
 	else
 		rb(data);
-	return;
+	return ;
 }
 
-void radix_sort(t_data *data)
+void	radix_sort(t_data *data)
 {
-	int lst_size;
-	int bitshift;
-	int max_rank;
+	int	lst_size;
+	int	bitshift;
+	int	max_rank;
 
 	bitshift = 0;
 	init_rank(data->a);
