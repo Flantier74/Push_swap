@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 12:35:04 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 16:29:42 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:46:12 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,4 @@ void	bubble_sort(t_data *data)
 			i++;
 		}
 	}
-	/* i = 0;
-	while (i++ < data->a_size)
-	{
-		printf("%d, ", data->a->content);
-		ra(data);
-	} */
 }
