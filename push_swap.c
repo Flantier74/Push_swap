@@ -6,17 +6,19 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/14 11:27:07 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/14 13:35:31 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void printer(t_data *data)
+static void	printer(t_data *data)
 {
-	t_stack *a = data->a;
-	t_stack *b = data->b;
+	t_stack	*a;
+	t_stack	*b;
 
+	a = data->a;
+	b = data->b;
 	printf("   AAA      BBB\n------------------\n");
 	while (a || b)
 	{
@@ -34,7 +36,7 @@ static void printer(t_data *data)
 	}
 }
 
-static int select_strategy(char **argv)
+static int	select_strategy(char **argv)
 {
 	if (!ft_strncmp("--simple", argv[1], 8))
 		return (1);
@@ -47,21 +49,19 @@ static int select_strategy(char **argv)
 	return (-1);
 }
 
-static void sort(t_data *data, int strat)
+static void	sort(t_data *data, int strat)
 {
 	if (strat == 1)
 	{
 		printf("\nSIMPLE\n");
 		insertion_sort_adaptation(data);
 		return ;
-		// return (insertion_sort_adaptation(data));
 	}
 	else if (strat == 2)
 	{
 		printf("\nMEDIUM\n");
 		chunk_based_sorting(data);
 		return ;
-		// return (chunk_based_sorting(data));
 	}
 	else if (strat == 3)
 	{
@@ -70,13 +70,13 @@ static void sort(t_data *data, int strat)
 		return ;
 	}
 	else
-		return ; // TODO adaptive()
+		return ;
 }
 
-static t_data *build_data(int argc, char **argv, int strat)
+static t_data	*build_data(int argc, char **argv, int strat)
 {
-	t_data  *data;
-	t_stack *ptr;
+	t_data	*data;
+	t_stack	*ptr;
 
 	if (argc < 1 || !argv)
 		return (NULL);
@@ -93,20 +93,18 @@ static t_data *build_data(int argc, char **argv, int strat)
 	return (data);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	int     strat;
+	int		strat;
 	t_data	*data;
 	double	disorder;
 
 	strat = select_strategy(argv);
 	data = build_data(argc, argv, strat);
 	disorder = calc_disorder(data->a);
-
 	sort(data, strat);
 	printer(data);
 	printf("------------------> OPS(disorder) = %d(%f)\n", data->count,
-	       disorder);
-
+		disorder);
 	return (0);
 }
