@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 17:21:21 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 13:07:17 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/14 17:24:20 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,60 +14,50 @@
 
 void	if_upper_roll_until_max(t_data *data, int min, int *max)
 {
-	int	side;
-
-	if (data->a->content > *max)
+	if (data->b->content > *max)
 	{
-		while (data->b->content != *max)
-			rb(data);
-		rb(data);
-		*max = data->a->content;
+		while (data->a->content != *max)
+			ra(data);
+		ra(data);
+		*max = data->b->content;
 		return ;
 	}
-	side = 0;
-	if (data->a->content > (*max + min) / 2)
-		side = 1;
-	if (side)
+	if (data->b->content > (*max + min) / 2)
 	{
-		while (data->a->content > data->b->content)
-			rb(data);
+		while (data->b->content > data->a->content)
+			ra(data);
 	}
 	else
 	{
-		while (data->a->content > data->b->content)
-			rrb(data);
-		while (data->a->content < data->b->content)
-			rrb(data);
-		rb(data);
+		while (data->b->content > data->a->content)
+			rra(data);
+		while (data->b->content < data->a->content)
+			rra(data);
+		ra(data);
 	}
 }
 
 void	if_lower_roll_until_min(t_data *data, int *min, int max)
 {
-	int	side;
-
-	if (data->a->content < *min)
+	if (data->b->content < *min)
 	{
-		while (data->b->content != *min)
-			rb(data);
-		*min = data->a->content;
+		while (data->a->content != *min)
+			ra(data);
+		*min = data->b->content;
 		return ;
 	}
-	side = 0;
-	if (data->a->content > (max + *min) / 2)
-		side = 1;
-	if (side)
+	if (data->b->content > (max + *min) / 2)
 	{
-		while (data->a->content < data->b->content)
-			rrb(data);
-		rb(data);
+		while (data->b->content < data->a->content)
+			rra(data);
+		ra(data);
 	}
 	else
 	{
-		while (data->a->content < data->b->content)
-			rb(data);
-		while (data->a->content > data->b->content)
-			rb(data);
+		while (data->b->content < data->a->content)
+			ra(data);
+		while (data->b->content > data->a->content)
+			ra(data);
 	}
 }
 

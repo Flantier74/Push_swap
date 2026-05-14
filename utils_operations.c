@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 16:24:27 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 12:57:49 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/14 17:18:47 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,10 @@ int	ft_max(t_stack *stack)
 	return (max);
 }
 
-void	push_all_b_a(t_data *data, int min, int max)
+void	push_all_ab_let_one(t_data *data)
 {
-	while (data->b->content != max)
-		rb(data);
-	while (data->b)
-	{
-		pa(data);
-		rrb(data);
-	}
-	while (data->a->content != min)
-		ra(data);
+	if (!data->a)
+		return ;
+	while (data->a->next)
+		pb(data);
 }
