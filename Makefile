@@ -9,6 +9,7 @@ SRCS =	calc_disorder.c \
 		insertion_sort_adaptation.c \
 		chunk_based_sorting.c \
 		lst_utils.c \
+		lst_utils2.c \
 		optimizations.c \
 		quicksort.c \
 		utils_operations.c \
