@@ -5,6 +5,7 @@ DBG = -g
 INCLUDES = tests
 SRC_PATH = .
 SRCS =	calc_disorder.c \
+		bubble_sort.c \
 		insertion_sort_adaptation.c \
 		chunk_based_sorting.c \
 		lst_utils.c \
