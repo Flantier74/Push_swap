@@ -3,50 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   chunk_based_sorting.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophe <christophe@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 11:33:02 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/13 23:04:56 by christophe       ###   ########.fr       */
+/*   Updated: 2026/05/14 12:59:21 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	bubble_sort(t_data *data)
-{
-	int			i;
-	int			sorted;
-
-	sorted = 0;
-	while (!sorted)
-	{
-		sorted = 1;
-		i = 0;
-		while (i < data->b_size)
-		{
-			if (i < data->b_size - 1 && data->b->next
-				&& data->b->content < data->b->next->content)
-			{
-				sb(data);
-				sorted = 0;
-			}
-			rb(data);
-			i++;
-		}
-	}
-}
-
-static void	loop_chunk(t_data *data, int chunk, int min)
+static void	loop_chunk(t_data *data, int chunk, int min_chunk)
 {
 	int	i;
+	int	min_current;
+	int	max_current;
 
+	if (!data->b)
+		pb(data);
+	min_current = ft_min(data->b);
+	max_current = ft_max(data->b);
 	i = 0;
 	while (data->a && i < data->a_size + data->b_size)
 	{
-		if (data->a->content > min + chunk)
+		if (data->a->content > min_chunk + chunk)
 			ra(data);
 		else
+		{
+			if (data->a->content < data->b->content)
+				if_lower_roll_until_min(data, &min_current, max_current);
+			if (data->a->content > data->b->content)
+				if_upper_roll_until_max(data, min_current, &max_current);
 			pb(data);
+		}
 		i++;
 	}
 }
@@ -54,18 +42,25 @@ static void	loop_chunk(t_data *data, int chunk, int min)
 void	chunk_based_sorting(t_data *data)
 {
 	int		chunk;
-	int		min;
-	int		max;
+	int		min_chunk;
+	int		max_all;
+	int		i;
 
-	min = ft_min(data->a);
-	max = ft_max(data->a);
-	chunk = (max - min) / ft_square(data->a_size);
+	min_chunk = ft_min(data->a);
+	max_all = ft_max(data->a);
+	chunk = (max_all - min_chunk) / ft_square(data->a_size);
 	if (chunk < 0)
 		chunk = -chunk;
-	while (data->a && min < max)
+	while (data->a && min_chunk < max_all)
 	{
-		loop_chunk(data, chunk, min);
-		bubble_sort(data);
-		min = min + chunk;
+		loop_chunk(data, chunk, min_chunk);
+		min_chunk = min_chunk + chunk;
+	}
+	push_all_b_a(data, ft_min(data->b), max_all);
+	i = 0;
+	while (i++ < data->a_size)
+	{
+		printf("%d, ", data->a->content);
+		ra(data);
 	}
 }
