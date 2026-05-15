@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 10:51:59 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/14 17:18:58 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,17 @@ void		rrr(t_data *data);
 int			ft_square(double value);
 int			ft_max(t_stack *stack);
 int			ft_min(t_stack *stack);
-void		quicksort(t_stack *stack, size_t nmemb, size_t size, int (*compar)(const int *, const int *));
+void		push_all_ab_let_one(t_data *data);
+void		if_upper_roll_until_max(t_data *data, int min, int *max);
+void		if_lower_roll_until_min(t_data *data, int *min, int max);
 void		insertion_sort_adaptation(t_data *data);
+void		bubble_sort(t_data *data);
 void		chunk_based_sorting(t_data *data);
-void		swap(int *a, int *b);
 void		ft_best_rot(t_stack **stack, t_stack *node);
 void		radix_sort(t_data *data);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_power(int nb, int pow);
 int			ft_atoi(const char *nptr);
-int         ft_isdigit(int c);
+int			ft_isdigit(int c);
 
 #endif

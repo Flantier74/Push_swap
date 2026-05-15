@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   bubble_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 16:28:46 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/14 13:51:54 by cribstei         ###   ########.fr       */
+/*   Created: 2026/05/14 12:35:04 by cribstei          #+#    #+#             */
+/*   Updated: 2026/05/14 16:46:12 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils_test.h"
+#include "push_swap.h"
 
-int	main(void)
+void	bubble_sort(t_data *data)
 {
-	test_500_1000();
+	int			i;
+	int			sorted;
+
+	sorted = 0;
+	while (!sorted)
+	{
+		sorted = 1;
+		i = 0;
+		while (i < data->a_size)
+		{
+			if (i < data->a_size - 1 && data->a->next
+				&& data->a->content > data->a->next->content)
+			{
+				sa(data);
+				sorted = 0;
+			}
+			ra(data);
+			i++;
+		}
+	}
 }

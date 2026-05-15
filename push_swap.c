@@ -6,17 +6,19 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/14 11:27:07 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:41:39 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void printer(t_data *data)
+static void	printer(t_data *data)
 {
-	t_stack *a = data->a;
-	t_stack *b = data->b;
+	t_stack	*a;
+	t_stack	*b;
 
+	a = data->a;
+	b = data->b;
 	printf("   AAA      BBB\n------------------\n");
 	while (a || b)
 	{
@@ -34,7 +36,7 @@ static void printer(t_data *data)
 	}
 }
 
-static int select_strategy(char **argv)
+static int	select_strategy(char **argv)
 {
 	if (!ft_strncmp("--simple", argv[1], 8))
 		return (1);
@@ -49,47 +51,33 @@ static int select_strategy(char **argv)
 
 static int adapt(double disorder)
 {
-  if (disorder < 0.2)
-	return (1);
-  else if (disorder < 0.5)
-	return (2);
-  else
-	return (3);
+	if (disorder < 0.2)
+		return (1);
+	else if (disorder < 0.5)
+		return (2);
+	else
+		return (3);
 }
 
-static void sort(t_data *data, int strat)
+static void	sort(t_data *data, int strat)
 {
 	if (strat == 1)
-	{
-		printf("\nSIMPLE\n");
-		insertion_sort_adaptation(data);
-		return ;
-		// return (insertion_sort_adaptation(data));
-	}
+		return (write(1, "\nSIMPLE\n", 8), bubble_sort(data));
 	else if (strat == 2)
-	{
-		printf("\nMEDIUM\n");
-		chunk_based_sorting(data);
-		return ;
-		// return (chunk_based_sorting(data));
-	}
+		return (write(1, "\nMEDIUM\n", 8), chunk_based_sorting(data));
 	else if (strat == 3)
+		return (write(1, "\nCOMPLEX\n", 9), radix_sort(data));
+	else
 	{
-		printf("\nCOMPLEX\n");
-		radix_sort(data);
+		sort(data, adapt(strat));
 		return ;
 	}
-	else
-	  {
-		sort(data, adapt(strat));
-		return;
-	  }
 }
 
-static t_data *build_data(int argc, char **argv, int strat)
+static t_data	*build_data(int argc, char **argv, int strat)
 {
-	t_data  *data;
-	t_stack *ptr;
+	t_data	*data;
+	t_stack	*ptr;
 
 	if (argc < 1 || !argv)
 		return (NULL);
@@ -106,20 +94,18 @@ static t_data *build_data(int argc, char **argv, int strat)
 	return (data);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	int     strat;
+	int		strat;
 	t_data	*data;
 	double	disorder;
 
 	strat = select_strategy(argv);
 	data = build_data(argc, argv, strat);
 	disorder = calc_disorder(data->a);
-
 	sort(data, strat);
 	printer(data);
 	printf("------------------> OPS(disorder) = %d(%f)\n", data->count,
-	       disorder);
-
+		disorder);
 	return (0);
 }
