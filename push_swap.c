@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/15 15:36:05 by eruffin          ###   ########.fr       */
+/*   Updated: 2026/05/15 16:12:17 by eruffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void	sort(t_data *data, int strat)
 		return (write(1, "\nCOMPLEX\n", 9), radix_sort(data));
 	else
 	{
-		sort(data, adapt(strat));
+		sort(data, adapt(calc_disorder(data->a)));
 		return ;
 	}
 }
