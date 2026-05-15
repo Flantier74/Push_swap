@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/15 12:14:37 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 13:59:00 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_power(int nb, int pow);
 int			ft_atoi(const char *nptr);
 int			ft_isdigit(int c);
+void		ft_lstclear(t_stack **lst);
 
 #endif

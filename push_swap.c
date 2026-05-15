@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/15 12:05:50 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 14:07:39 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,8 @@ int	main(int argc, char *argv[])
 	printer(data);
 	printf("------------------> OPS(disorder) = %d(%f)\n", data->count,
 		disorder);
+	ft_lstclear(&data->a);
+	ft_lstclear(&data->b);
+	free(data);
 	return (0);
 }
