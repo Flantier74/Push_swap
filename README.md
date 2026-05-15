@@ -8,6 +8,12 @@ list in the most efficient way.
 Push_swap selects its algorithm based on the disorder of the list given as input.
 Flags can be used to force the program to use one particular algorithm.
 
+Radix sort is a non-comparative sorting algorithm. It ranks every value to be
+sorted and sort the elements by comparing the ranks instead of the element
+themselves.
+The time complexity is 𝒪(n * k), where n is the number of elements and k is the
+number of bits used to represent the highest rank.
+
 TODO: input greater than int range.
 
 # INSTRUCTIONS
