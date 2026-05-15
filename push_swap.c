@@ -6,35 +6,11 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/15 16:12:17 by eruffin          ###   ########.fr       */
+/*   Updated: 2026/05/15 17:01:33 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	printer(t_data *data)
-{
-	t_stack	*a;
-	t_stack	*b;
-
-	a = data->a;
-	b = data->b;
-	printf("   AAA      BBB\n------------------\n");
-	while (a || b)
-	{
-		if (a)
-		{
-			printf("(%d) %3d         ", a->rank, a->content);
-			a = a->next;
-		}
-		if (b)
-		{
-			printf("(%d) %3d", b->rank, b->content);
-			b = b->next;
-		}
-		printf("\n");
-	}
-}
 
 static int	select_strategy(char **argv)
 {
@@ -62,11 +38,11 @@ static int	adapt(double disorder)
 static void	sort(t_data *data, int strat)
 {
 	if (strat == 1)
-		return (write(1, "\nSIMPLE\n", 8), bubble_sort(data));
+		return (bubble_sort(data));
 	else if (strat == 2)
-		return (write(1, "\nMEDIUM\n", 8), chunk_based_sorting(data));
+		return (chunk_based_sorting(data));
 	else if (strat == 3)
-		return (write(1, "\nCOMPLEX\n", 9), radix_sort(data));
+		return (radix_sort(data));
 	else
 	{
 		sort(data, adapt(calc_disorder(data->a)));
@@ -102,7 +78,6 @@ int	main(int argc, char *argv[])
 {
 	int		strat;
 	t_data	*data;
-	double	disorder;
 
 	if (argc < 1 || !argv[1])
 		error_exit();
@@ -111,11 +86,7 @@ int	main(int argc, char *argv[])
 		|| (argc == 2 && strat > 0))
 		error_exit();
 	data = build_data(argc, argv, strat);
-	disorder = calc_disorder(data->a);
 	sort(data, strat);
-	printer(data);
-	printf("------------------> OPS(disorder) = %d(%f)\n", data->count,
-		disorder);
 	ft_lstclear(&data->a);
 	ft_lstclear(&data->b);
 	free(data);
