@@ -105,12 +105,10 @@ int	main(int argc, char *argv[])
 	double	disorder;
 
 	if (argc < 1 || !argv[1])
-	{
-		write(2, "ERROR\n", 6);
-		exit(EXIT_FAILURE);
-	}
+		error_exit();
 	strat = select_strategy(argv);
-	if (argc == 2 && strat > 0)
+	if (((strat >= 0) && (select_strategy(argv + 1) >= 0))
+		|| (argc == 2 && strat > 0))
 		error_exit();
 	data = build_data(argc, argv, strat);
 	disorder = calc_disorder(data->a);
