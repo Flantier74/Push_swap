@@ -6,20 +6,17 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 12:35:04 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/15 13:44:12 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 15:40:51 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	roll_in_good_direction(t_data *data, int i)
+static void	roll_in_good_direction(t_data *data, int i, int size)
 {
-	int	size;
-
-	size = ft_lstsize(data->a);
 	if (i > size / 2)
 	{
-		while (i++ < size - 1)
+		while (i++ < size)
 			rra(data);
 	}
 	else
@@ -32,25 +29,27 @@ static void	roll_in_good_direction(t_data *data, int i)
 static int	sorted_but_not_rolled(t_data *data)
 {
 	int			i;
+	int			size;
 	t_stack		*ptr;
 
 	i = 0;
 	ptr = data->a;
-	while (ptr && ptr->next && ptr->content < ptr->next->content)
-	{
+	size = ft_lstsize(data->a);
+	while (ptr && ptr->next && ptr->content < ptr->next->content && i++)
 		ptr = ptr->next;
-		i++;
-	}
-	if (ptr->next)
+	if (i == size - 1)
+		return (1);
+	else
 		ptr = ptr->next;
 	while (ptr && ptr->next)
 	{
-		if (ptr->content < ptr->next->content)
-			ptr = ptr->next;
-		else
+		if (ptr->content > ptr->next->content)
 			return (0);
+		ptr = ptr->next;
 	}
-	roll_in_good_direction(data, i);
+	if (ptr->content > data->a->content)
+		return (0);
+	roll_in_good_direction(data, i, size);
 	return (1);
 }
 
