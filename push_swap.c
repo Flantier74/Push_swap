@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/15 14:07:39 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 15:45:24 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static void	sort(t_data *data, int strat)
 static t_data	*build_data(int argc, char **argv, int strat)
 {
 	t_stack		*ptr;
-	t_stack 	*first;
+	t_stack		*first;
 	int			i;
 
 	if (argc < 1 || !argv || strat < 0)
