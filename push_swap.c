@@ -49,7 +49,7 @@ static int	select_strategy(char **argv)
 	return (-1);
 }
 
-static int adapt(double disorder)
+static int	adapt(double disorder)
 {
 	if (disorder < 0.2)
 		return (1);

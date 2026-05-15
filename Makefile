@@ -10,7 +10,6 @@ SRCS =	calc_disorder.c \
 		chunk_based_sorting.c \
 		lst_utils.c \
 		lst_utils2.c \
-		optimizations.c \
 		utils_operations.c \
 		utils_operations_stack_a.c \
 		utils_operations_stack_a_b.c \
@@ -20,7 +19,7 @@ SRCS =	calc_disorder.c \
 
 OBJS = 	$(SRCS:%.c=%.o)
 
-TESTS =	tests/test_500_1000.c 
+TESTS =	tests/test_500_1000.c
 
 TESTS_OBJS = $(TESTS:%.c=%.o)
 
