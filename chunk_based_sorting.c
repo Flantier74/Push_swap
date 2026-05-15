@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 11:33:02 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 17:16:40 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 11:37:22 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	chunk_based_sorting(t_data *data)
 	chunk = (max_all - min_chunk) / ft_square(data->b_size);
 	if (chunk < 0)
 		chunk = -chunk;
-	while (data->b && min_chunk < max_all)
+	while (data->b && min_chunk <= max_all)
 	{
 		loop_chunk(data, chunk, min_chunk);
 		min_chunk = min_chunk + chunk;
