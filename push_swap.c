@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/15 13:34:02 by eruffin          ###   ########.fr       */
+/*   Updated: 2026/05/15 15:36:05 by eruffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,23 +76,26 @@ static void	sort(t_data *data, int strat)
 
 static t_data	*build_data(int argc, char **argv, int strat)
 {
-	t_stack		*ptr;
-	t_stack		*first;
-	int			i;
+	t_data	*data;
+	t_stack	*ptr;
+	int		i;
 
-	str_overflow(argv[argc - 1]);
-	if (argc < 1 || !argv || strat < 0)
-		return (NULL);
-	i = 2;
-	first = ft_lstnew(ft_atoi(argv[i++]));
-	ptr = first;
+	str_overflow(argv[1 + (strat >= 0)]);
+	if (argc < 1 || !argv)
+		error_exit();
+	data = ft_datanew(ft_lstnew(ft_atoi(argv[1 + (strat >= 0)])), NULL);
+	argc--;
+	ptr = data->a;
+	i = 1 + (strat >= 0);
 	while (i < argc)
 	{
-		ptr->next = ft_lstnew(ft_atoi(argv[i]));
+		str_overflow(argv[i + 1]);
+		ptr->next = ft_lstnew(ft_atoi(argv[i + 1]));
 		ptr = ptr->next;
 		i++;
 	}
-	return (ft_datanew(first, NULL));
+	data->a_size = ft_lstsize(data->a);
+	return (data);
 }
 
 int	main(int argc, char *argv[])
@@ -107,11 +110,12 @@ int	main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	strat = select_strategy(argv);
+	if (argc == 2 && strat > 0)
+		error_exit();
 	data = build_data(argc, argv, strat);
 	disorder = calc_disorder(data->a);
 	sort(data, strat);
 	printer(data);
-	printf("------------------> OPS(disorder) = %d(%f)\n", data->count,
-		disorder);
+	printf("------------------> OPS(disorder) = %d(%f)\n", data->count, disorder);
 	return (0);
 }
