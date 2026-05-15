@@ -34,5 +34,5 @@ double	calc_disorder(t_stack *stack)
 		}
 		i = i->next;
 	}
-	return (mistakes / total_pairs);
+	return (1 - (mistakes / total_pairs));
 }
