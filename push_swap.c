@@ -47,6 +47,16 @@ static int select_strategy(char **argv)
 	return (-1);
 }
 
+static int adapt(double disorder)
+{
+  if (disorder < 0.2)
+	return (1);
+  else if (disorder < 0.5)
+	return (2);
+  else
+	return (3);
+}
+
 static void sort(t_data *data, int strat)
 {
 	if (strat == 1)
@@ -70,7 +80,10 @@ static void sort(t_data *data, int strat)
 		return ;
 	}
 	else
-		return ; // TODO adaptive()
+	  {
+		sort(data, adapt(strat));
+		return;
+	  }
 }
 
 static t_data *build_data(int argc, char **argv, int strat)
