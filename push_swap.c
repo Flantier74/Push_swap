@@ -116,6 +116,10 @@ int	main(int argc, char *argv[])
 	disorder = calc_disorder(data->a);
 	sort(data, strat);
 	printer(data);
-	printf("------------------> OPS(disorder) = %d(%f)\n", data->count, disorder);
+	printf("------------------> OPS(disorder) = %d(%f)\n", data->count,
+		disorder);
+	ft_lstclear(&data->a);
+	ft_lstclear(&data->b);
+	free(data);
 	return (0);
 }

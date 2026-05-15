@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 16:24:27 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 17:18:47 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 12:14:14 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,15 @@ void	push_all_ab_let_one(t_data *data)
 		return ;
 	while (data->a->next)
 		pb(data);
+}
+
+int	is_sorted(t_stack *a)
+{
+	while (a && a->next)
+	{
+		if (a->content > a->next->content)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }

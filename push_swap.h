@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/15 13:18:58 by eruffin          ###   ########.fr       */
+/*   Updated: 2026/05/15 13:59:00 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int			ft_square(double value);
 int			ft_max(t_stack *stack);
 int			ft_min(t_stack *stack);
 void		push_all_ab_let_one(t_data *data);
+int			is_sorted(t_stack *a);
 void		if_upper_roll_until_max(t_data *data, int min, int *max);
 void		if_lower_roll_until_min(t_data *data, int *min, int max);
 void		insertion_sort_adaptation(t_data *data);
@@ -80,5 +81,6 @@ long		ft_atoi(const char *nptr);
 int			ft_isdigit(int c);
 int			error_exit(void);
 int			str_overflow(char *str);
+void		ft_lstclear(t_stack **lst);
 
 #endif

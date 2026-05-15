@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 13:20:17 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 13:21:03 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 14:00:06 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,23 @@ void	ft_lstdelone(t_stack *stack)
 	if (!stack)
 		return ;
 	free(stack);
+}
+
+void	ft_lstclear(t_stack **lst)
+{
+	t_stack	*tmp;
+
+	if (!lst)
+		return ;
+	if (*lst == NULL)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		free(*lst);
+		*lst = tmp;
+	}
+	*lst = NULL;
 }
 
 // gives each node of the stack a rank based on its value compared to other
