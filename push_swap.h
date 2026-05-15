@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 17:18:58 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 13:18:58 by eruffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,9 @@ void		ft_best_rot(t_stack **stack, t_stack *node);
 void		radix_sort(t_data *data);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_power(int nb, int pow);
-int			ft_atoi(const char *nptr);
+long		ft_atoi(const char *nptr);
 int			ft_isdigit(int c);
+int			error_exit(void);
+int			str_overflow(char *str);
 
 #endif

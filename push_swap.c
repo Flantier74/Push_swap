@@ -79,13 +79,13 @@ static t_data	*build_data(int argc, char **argv, int strat)
 	t_data	*data;
 	t_stack	*ptr;
 
-	if (argc < 1 || !argv)
-		return (NULL);
+	str_overflow(argv[argc - 1]);
 	data = ft_datanew(ft_lstnew(ft_atoi(argv[argc - 1])), NULL);
 	argc--;
 	ptr = data->a;
 	while (argc > (1 + (strat > 0)))
 	{
+		str_overflow(argv[argc - 1]);
 		ptr->next = ft_lstnew(ft_atoi(argv[argc - 1]));
 		ptr = ptr->next;
 		argc--;
@@ -100,6 +100,11 @@ int	main(int argc, char *argv[])
 	t_data	*data;
 	double	disorder;
 
+	if (argc < 1 || !argv[1])
+	{
+		write(2, "ERROR\n", 6);
+		exit(EXIT_FAILURE);
+	}
 	strat = select_strategy(argv);
 	data = build_data(argc, argv, strat);
 	disorder = calc_disorder(data->a);
