@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 17:18:58 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 11:21:53 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,17 @@ typedef struct s_data
 	int			a_size;
 	int			b_size;
 	int			count;
+	int			count_sa;
+	int			count_sb;
+	int			count_ss;
+	int			count_pa;
+	int			count_pb;
+	int			count_ra;
+	int			count_rb;
+	int			count_rr;
+	int			count_rra;
+	int			count_rrb;
+	int			count_rrr;
 }	t_data;
 
 double		calc_disorder(t_stack *stack);
