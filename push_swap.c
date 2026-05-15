@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/14 16:41:39 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 12:05:50 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,22 +76,22 @@ static void	sort(t_data *data, int strat)
 
 static t_data	*build_data(int argc, char **argv, int strat)
 {
-	t_data	*data;
-	t_stack	*ptr;
+	t_stack		*ptr;
+	t_stack 	*first;
+	int			i;
 
-	if (argc < 1 || !argv)
+	if (argc < 1 || !argv || strat < 0)
 		return (NULL);
-	data = ft_datanew(ft_lstnew(ft_atoi(argv[argc - 1])), NULL);
-	argc--;
-	ptr = data->a;
-	while (argc > (1 + (strat > 0)))
+	i = 2;
+	first = ft_lstnew(ft_atoi(argv[i++]));
+	ptr = first;
+	while (i < argc)
 	{
-		ptr->next = ft_lstnew(ft_atoi(argv[argc - 1]));
+		ptr->next = ft_lstnew(ft_atoi(argv[i]));
 		ptr = ptr->next;
-		argc--;
+		i++;
 	}
-	data->a_size = ft_lstsize(data->a);
-	return (data);
+	return (ft_datanew(first, NULL));
 }
 
 int	main(int argc, char *argv[])
