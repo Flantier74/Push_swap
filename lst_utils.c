@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 10:37:34 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 13:20:51 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 11:30:05 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ t_data	*ft_datanew(t_stack *a, t_stack *b)
 	data->b = b;
 	data->a_size = ft_lstsize(a);
 	data->b_size = ft_lstsize(b);
+	data->count = 0;
+	data->count_sa = 0;
+	data->count_sb = 0;
+	data->count_ss = 0;
+	data->count_pa = 0;
+	data->count_pb = 0;
+	data->count_ra = 0;
+	data->count_rb = 0;
+	data->count_rr = 0;
+	data->count_rra = 0;
+	data->count_rrb = 0;
+	data->count_rrr = 0;
 	return (data);
 }
 

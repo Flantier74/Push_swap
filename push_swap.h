@@ -31,6 +31,17 @@ typedef struct s_data
 	int			a_size;
 	int			b_size;
 	int			count;
+	int			count_sa;
+	int			count_sb;
+	int			count_ss;
+	int			count_pa;
+	int			count_pb;
+	int			count_ra;
+	int			count_rb;
+	int			count_rr;
+	int			count_rra;
+	int			count_rrb;
+	int			count_rrr;
 }	t_data;
 
 double		calc_disorder(t_stack *stack);

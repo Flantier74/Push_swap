@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 17:21:21 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 17:24:20 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 11:24:17 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	ss(t_data *data)
 	data->b->content = data->b->next->content;
 	data->b->next->content = tmp;
 	data->count += write(1, "ss", 2) - 1;
+	data->count_ss += 1;
 }
 
 void	rr(t_data *data)
@@ -94,6 +95,7 @@ void	rr(t_data *data)
 	last->next = tmp;
 	tmp->next = NULL;
 	data->count += write(1, "rr", 2) - 1;
+	data->count_rr += 1;
 }
 
 void	rrr(t_data *data)
@@ -114,4 +116,5 @@ void	rrr(t_data *data)
 	last->next = data->b;
 	data->b = last;
 	data->count += write(1, "rrr", 3) - 2;
+	data->count_rrr += 1;
 }

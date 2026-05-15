@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calc_disorder.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eruffin <eruffin@learner.42.tech>          +#+  +:+       +#+        */
+/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 12:45:36 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/13 12:45:38 by eruffin          ###   ########.fr       */
+/*   Updated: 2026/05/15 12:08:23 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ double	calc_disorder(t_stack *stack)
 		}
 		i = i->next;
 	}
-	return (1 - (mistakes / total_pairs));
+	return (mistakes / total_pairs);
 }

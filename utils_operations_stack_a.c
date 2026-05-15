@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 17:21:13 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/14 10:50:43 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/15 11:23:30 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	sa(t_data *data)
 	data->a->content = data->a->next->content;
 	data->a->next->content = tmp;
 	data->count += write(1, "sa\n", 3) - 2;
+	data->count_sa += 1;
 }
 
 void	pa(t_data *data)
@@ -40,6 +41,7 @@ void	pa(t_data *data)
 	data->a_size++;
 	data->b_size--;
 	data->count += write(1, "pa\n", 3) - 2;
+	data->count_pa += 1;
 }
 
 void	ra(t_data *data)
@@ -55,6 +57,7 @@ void	ra(t_data *data)
 	last->next = tmp;
 	tmp->next = NULL;
 	data->count += write(1, "ra\n", 3) - 2;
+	data->count_ra += 1;
 }
 
 void	rra(t_data *data)
@@ -70,4 +73,5 @@ void	rra(t_data *data)
 	last->next = data->a;
 	data->a = last;
 	data->count += write(1, "rra\n", 4) - 3;
+	data->count_rra += 1;
 }
