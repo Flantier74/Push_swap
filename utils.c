@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 16:56:58 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/18 15:08:42 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/18 15:12:15 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ long	ft_atoi(const char *nptr)
 	long	sum;
 	long	len;
 
-	len = 0;
 	sign = 1;
 	sum = 0;
 	while (((*nptr >= 9) && (*nptr <= 13)) || (*nptr == 32))
@@ -36,10 +35,7 @@ long	ft_atoi(const char *nptr)
 		if (*nptr++ == '-')
 			sign *= -1;
 	}
-	if (!ft_isdigit(*nptr))
-		error_exit();
-	while (ft_isdigit(nptr[len]))
-		len++;
+	len = len_str((char *)nptr);
 	while (ft_isdigit(*nptr) && str_overflow(sum, sign, (char *)nptr, len))
 	{
 		sum += (*nptr - 48) * ft_power(10, len - 1);

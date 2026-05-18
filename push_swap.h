@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/18 13:18:31 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/18 13:54:24 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ int			error_exit(void);
 int			str_overflow(long sum, int sign, char *nptr, int len);
 int			dupplicate_values(t_stack *stack);
 void		ft_lstclear(t_stack **lst);
+int			len_str(char *str);
 
 #endif

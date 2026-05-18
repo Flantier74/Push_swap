@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eruffin <eruffin@learner.42.tech>          +#+  +:+       +#+        */
+/*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 13:19:49 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/15 13:20:01 by eruffin          ###   ########.fr       */
+/*   Updated: 2026/05/18 14:00:50 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,18 @@ int	error_exit(void)
 {
 	write(2, "Error\n", 6);
 	return (exit(EXIT_FAILURE), -1);
+}
+
+int	len_str(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] && str[i] != ' ')
+	{
+		if (!ft_isdigit(str[i]))
+			error_exit();
+		i++;
+	}
+	return (i);
 }
