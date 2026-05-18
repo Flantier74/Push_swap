@@ -22,6 +22,6 @@ int	str_overflow(char *str)
 
 int	error_exit(void)
 {
-	write(2, "ERROR\n", 6);
+	write(2, "Error\n", 6);
 	return (exit(EXIT_FAILURE), -1);
 }
