@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/15 17:01:33 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/18 12:03:22 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,17 @@ int	main(int argc, char *argv[])
 	int		strat;
 	t_data	*data;
 
-	if (argc < 1 || !argv[1])
+	if (argc == 1)
+		return (0);
+	if (!argv[1])
 		error_exit();
 	strat = select_strategy(argv);
 	if ((argc == 2 && strat >= 0)
 		|| ((strat >= 0) && (select_strategy(argv + 1) >= 0)))
 		error_exit();
 	data = build_data(argc, argv, strat);
+	if (is_sorted(data->a) || data->a_size == 1)
+		return (0);
 	sort(data, strat);
 	ft_lstclear(&data->a);
 	ft_lstclear(&data->b);
