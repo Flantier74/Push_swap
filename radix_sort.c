@@ -68,6 +68,8 @@ void	radix_sort(t_data *data)
 	bitshift = 0;
 	init_rank(data->a);
 	max_rank = highest_rank(data);
+	if (ft_lstsize(data->a) == 2)
+		return (ra(data));
 	while (bitshift <= count_bits(max_rank))
 	{
 		lst_size = ft_lstsize(data->a);
