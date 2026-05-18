@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:57:55 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/15 13:59:00 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/18 13:18:31 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ long		ft_atoi(const char *nptr);
 int			ft_isdigit(int c);
 int			error_exit(void);
 int			str_overflow(long sum, int sign, char *nptr, int len);
+int			dupplicate_values(t_stack *stack);
 void		ft_lstclear(t_stack **lst);
 
 #endif

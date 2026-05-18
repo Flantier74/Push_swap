@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 16:23:06 by eruffin           #+#    #+#             */
-/*   Updated: 2026/05/18 12:03:22 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/18 13:18:36 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ int	main(int argc, char *argv[])
 		|| ((strat >= 0) && (select_strategy(argv + 1) >= 0)))
 		error_exit();
 	data = build_data(argc, argv, strat);
+	if (dupplicate_values(data->a))
+		error_exit();
 	if (is_sorted(data->a) || data->a_size == 1)
 		return (0);
 	sort(data, strat);

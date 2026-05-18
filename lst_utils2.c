@@ -6,7 +6,7 @@
 /*   By: cribstei <cribstei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 13:20:17 by cribstei          #+#    #+#             */
-/*   Updated: 2026/05/15 14:00:06 by cribstei         ###   ########.fr       */
+/*   Updated: 2026/05/18 13:24:32 by cribstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,27 @@ void	init_rank(t_stack *stack)
 		node_min->rank = next_rank;
 		next_rank--;
 	}
+}
+
+int	dupplicate_values(t_stack *stack)
+{
+	t_stack		*first;
+	t_stack		*to_compare;
+
+	first = stack;
+	to_compare = stack;
+	while (to_compare && to_compare->next)
+	{
+		stack = first;
+		while (stack)
+		{
+			if (stack == to_compare)
+				stack = stack->next;
+			if (to_compare->content == stack->content)
+				return (1);
+			stack = stack->next;
+		}
+		to_compare = to_compare->next;
+	}
+	return (0);
 }
