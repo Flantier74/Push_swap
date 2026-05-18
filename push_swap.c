@@ -82,8 +82,8 @@ int	main(int argc, char *argv[])
 	if (argc < 1 || !argv[1])
 		error_exit();
 	strat = select_strategy(argv);
-	if (((strat >= 0) && (select_strategy(argv + 1) >= 0))
-		|| (argc == 2 && strat > 0))
+	if ((argc == 2 && strat >= 0)
+		|| ((strat >= 0) && (select_strategy(argv + 1) >= 0)))
 		error_exit();
 	data = build_data(argc, argv, strat);
 	sort(data, strat);
