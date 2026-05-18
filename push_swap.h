@@ -80,7 +80,7 @@ int			ft_power(int nb, int pow);
 long		ft_atoi(const char *nptr);
 int			ft_isdigit(int c);
 int			error_exit(void);
-int			str_overflow(char *str);
+int			str_overflow(long sum, int sign, char *nptr, int len);
 void		ft_lstclear(t_stack **lst);
 
 #endif

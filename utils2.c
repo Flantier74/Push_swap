@@ -12,12 +12,13 @@
 
 #include "push_swap.h"
 
-int	str_overflow(char *str)
+int	str_overflow(long sum, int sign, char *nptr, int len)
 {
-	if ((ft_atoi(str) < -2147483649) || (ft_atoi(str) > 2147483648))
-		return (error_exit(), -1);
+	if (((long)sum + ((long)(*nptr - 48) *(long)ft_power(10, len - 1)))
+		<= ((2147483647 + (long)(sign < 0))))
+		return (1);
 	else
-		return (0);
+		return (error_exit(), 1);
 }
 
 int	error_exit(void)

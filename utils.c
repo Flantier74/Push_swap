@@ -40,7 +40,7 @@ long	ft_atoi(const char *nptr)
 		return (0);
 	while (ft_isdigit(nptr[len]))
 		len++;
-	while (ft_isdigit(*nptr))
+	while (ft_isdigit(*nptr) && str_overflow(sum, sign, (char *)nptr, len))
 	{
 		sum += (*nptr - 48) * ft_power(10, len - 1);
 		nptr++;

@@ -56,7 +56,6 @@ static t_data	*build_data(int argc, char **argv, int strat)
 	t_stack	*ptr;
 	int		i;
 
-	str_overflow(argv[1 + (strat >= 0)]);
 	if (argc < 1 || !argv)
 		error_exit();
 	data = ft_datanew(ft_lstnew(ft_atoi(argv[1 + (strat >= 0)])), NULL);
@@ -65,7 +64,6 @@ static t_data	*build_data(int argc, char **argv, int strat)
 	i = 1 + (strat >= 0);
 	while (i < argc)
 	{
-		str_overflow(argv[i + 1]);
 		ptr->next = ft_lstnew(ft_atoi(argv[i + 1]));
 		ptr = ptr->next;
 		i++;
