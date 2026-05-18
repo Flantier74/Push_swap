@@ -37,7 +37,7 @@ long	ft_atoi(const char *nptr)
 			sign *= -1;
 	}
 	if (!ft_isdigit(*nptr))
-		return (0);
+		error_exit();
 	while (ft_isdigit(nptr[len]))
 		len++;
 	while (ft_isdigit(*nptr) && str_overflow(sum, sign, (char *)nptr, len))

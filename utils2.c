@@ -14,6 +14,8 @@
 
 int	str_overflow(long sum, int sign, char *nptr, int len)
 {
+	if (len > 10 + (sign < 0))
+		return (error_exit(), 1);
 	if (((long)sum + ((long)(*nptr - 48) *(long)ft_power(10, len - 1)))
 		<= ((2147483647 + (long)(sign < 0))))
 		return (1);
