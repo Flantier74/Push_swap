@@ -24,12 +24,10 @@ Each algorithm will use basic operations: swap, push, roll, reverse on the chain
 
 ### Radix sort:
 Radix sort is a non-comparative sorting algorithm. It ranks every value to be
-sorted and sort the elements by comparing the ranks instead of the element
-themselves.
+sorted and sort by comparing the ranks instead of the element themselves.
 The time complexity is 𝒪(n * k), where n is the number of elements and k is the
 number of bits used to represent the highest rank.
 
-TODO: input greater than int range.
 
 # INSTRUCTIONS
 ### **Building**
@@ -57,5 +55,7 @@ push_swap [OPTION] LIST
 # RESOURCES
 AI was used to understand the difference between the algorithms by generating
    tests for each.
+
 radix - https://github.com/To0nsa/push_swap
+
 quicksort - https://www.youtube.com/watch?v=MZaf_9IZCrc
